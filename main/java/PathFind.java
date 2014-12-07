@@ -10,17 +10,11 @@ public class PathFind {
         Scanner scan = new Scanner(System.in);
         int srcRegion = 0, dstRegion = 0;
         boolean invalidInput = true;
-        System.out.println("where are you ? please choose your place number.");
-        System.out
-                .println("1.Seoul 2.Gangneung 3.daejeon 4.gwangju 5.Busan 6.Jeju");
+        SentenceToSelectPlace(0);
 
         String chosenNumber = scan.nextLine();
         srcRegion = checkPlaceNumber(srcRegion, invalidInput, chosenNumber);
-        System.out
-                .println("where are you going? please choose your destination number.");
-
-        System.out
-                .println("1.Seoul 2.Gangneung 3.daejeon 4.gwangju 5.Busan 6.Jeju");
+        SentenceToSelectPlace(1);
 
         String dstNumber = scan.nextLine();
 
@@ -37,6 +31,20 @@ public class PathFind {
         k.start(srcRegion, dstRegion);
     }
 
+
+    public static void SentenceToSelectPlace(int isDestinationSelect) {
+        if(isDestinationSelect==0) {
+
+            System.out.println("where are you ? please choose your place number.");
+
+            System.out.println("1.Seoul 2.Gangneung 3.daejeon 4.gwangju 5.Busan 6.Jeju");
+        }else{
+            System.out.println("where are you going? please choose your destination number.");
+
+            System.out.println("1.Seoul 2.Gangneung 3.daejeon 4.gwangju 5.Busan 6.Jeju");
+
+        }
+    }
     public static int checkPlaceNumber(int srcRegion, boolean invalidInput, String chosenNumber) {
         while (invalidInput) {
             if (chosenNumber.equals("1") || chosenNumber.equals("seoul")
