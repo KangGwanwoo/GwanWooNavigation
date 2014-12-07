@@ -9,17 +9,15 @@ public class PathFind {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int srcRegion = 0, dstRegion = 0;
-        boolean invalidInput = true;
         SentenceToSelectPlace(0);
 
         String chosenNumber = scan.nextLine();
-        srcRegion = checkPlaceNumber(srcRegion, invalidInput, chosenNumber);
+        srcRegion = checkPlaceNumber(srcRegion,  chosenNumber);
         SentenceToSelectPlace(1);
 
         String dstNumber = scan.nextLine();
 
-        invalidInput = true;
-        dstRegion = checkPlaceNumber(dstRegion, invalidInput, dstNumber);
+        dstRegion = checkPlaceNumber(dstRegion, dstNumber);
 
 
         int m = 30000; // 30000 경로가 없는 곳.
@@ -45,7 +43,8 @@ public class PathFind {
 
         }
     }
-    public static int checkPlaceNumber(int srcRegion, boolean invalidInput, String chosenNumber) {
+    public static int checkPlaceNumber(int srcRegion, String chosenNumber) {
+        boolean invalidInput = true;
         while (invalidInput) {
             if (chosenNumber.equals("1") || chosenNumber.equals("seoul")
                     || chosenNumber.equals("Seoul")) {
