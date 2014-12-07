@@ -16,8 +16,11 @@ public class Dijkstra {
     private int startPoint;
     private int DestinationPoint;
 
-    public Dijkstra(int mapData[][]){
-        this.mapData = mapData;
+    public Dijkstra(){
+        this.mapData = new int[][] { { 0, 3, 2, 6, m, 2 },
+                { 3, 0, 3, m, 8, m }, { 2, 3, 0, 2, 3, m },
+                { 6, m, 2, 0, 7, m }, { m, 8, 3, 7, 0, 1 },
+                { 2, m, m, m, 1, 0 }, };
         theNumberOfPoint = mapData.length;
 
         distanceTemp = new int[theNumberOfPoint];
@@ -26,7 +29,7 @@ public class Dijkstra {
         routePoint = new int[theNumberOfPoint];
     }
     public static Dijkstra DijkstraInfoCreate(int mapData[][]){
-        return new Dijkstra(mapData);
+        return new Dijkstra();
     }
 
     public void println(Object line){

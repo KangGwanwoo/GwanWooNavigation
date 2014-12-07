@@ -24,7 +24,7 @@ public class PathFindTest {
                 { 3, 0, 3, m, 8, m }, { 2, 3, 0, 2, 3, m },
                 { 6, m, 2, 0, 7, m }, { m, 8, 3, 7, 0, 1 },
                 { 2, m, m, m, 1, 0 }, };
-        Dijkstra k = new Dijkstra(data);
+        Dijkstra k = new Dijkstra();
 
         return k.start(srcRegion, dstRegion);
     }
