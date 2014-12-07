@@ -15,6 +15,6 @@ public class TestHello {
                 { 2, m, m, m, 1, 0 },};
 
         DijkstraTest d = new DijkstraTest(data);
-        assertEquals(data.length, d.theNumberOfPoint);
+        assertEquals(2, d.start(1,6)); //1 = seoul 6=jeju airplane time is 2 hour
     }
 }
