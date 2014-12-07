@@ -1,5 +1,5 @@
 /**
- * Created by goodmorning on 2014-12-06.
+ * Created by goodmorning on 2014-12-07.
  */
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -8,21 +8,13 @@ public class TestHello {
 
     @Test
     public void testPasses() {
-        String expected = "Hello, JUnit!";
-        String hello = "Hello, JUnit!";
-        assertEquals(hello, expected);
-    }
+        int m = 30000;
+        int[][] data = new int[][] { { 0, 3, 2, 6, m, 2 },
+                { 3, 0, 3, m, 8, m }, { 2, 3, 0, 2, 3, m },
+                { 6, m, 2, 0, 7, m }, { m, 8, 3, 7, 0, 1 },
+                { 2, m, m, m, 1, 0 },};
 
-    @Test
-    public void testFails() {
-        // The worlds most obvious bug:
-        assertTrue(false);
-    }
-
-    @Test
-    public void testArray() {
-        int [] array1 = new int[] {1, 2, 3};
-        int [] array2 = new int[] {1, 2, 3};
-        assertArrayEquals(array1, array2);
+        DijkstraTest d = new DijkstraTest(data);
+        assertEquals(data.length, d.theNumberOfPoint);
     }
 }
