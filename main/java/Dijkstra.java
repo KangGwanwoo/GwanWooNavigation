@@ -33,15 +33,17 @@ public class Dijkstra {
         routePoint = new int[theNumberOfPoint];
     }
     public int start(int start, int end) {
+
         startPoint = start;
+
         DestinationPoint = end;
+
         printUserInputInfo(start, end);
 
-        int k = 0;
-        int min = 0;
+
         initPointInfo();
 
-        dijkstraAlgorithm(k);
+        dijkstraAlgorithm();
 
         return theLeastDistance();
     }
@@ -56,8 +58,11 @@ public class Dijkstra {
 
 
 
-    public void dijkstraAlgorithm(int k) {
-        int min;
+    public void dijkstraAlgorithm() {
+        int k = 0;
+
+        int min = 0;
+
         distanceTemp[startPoint - 1] = 0;
         for (int i = 0; i < theNumberOfPoint; i++) {
             min = m;

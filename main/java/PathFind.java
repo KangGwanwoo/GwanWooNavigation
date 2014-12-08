@@ -8,11 +8,15 @@ import java.util.Scanner;
 public class PathFind {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int srcRegion = 0, dstRegion = 0;
-        SentenceToSelectPlace(0);
+
+        int srcRegion = 0, dstRegion = 0; //variable initialization
+
+        SentenceToSelectPlace(0); //print notice
 
         String chosenNumber = scan.nextLine();
+
         srcRegion = checkPlaceNumber(srcRegion,  chosenNumber);
+
         SentenceToSelectPlace(1);
 
         String dstNumber = scan.nextLine();
@@ -21,6 +25,7 @@ public class PathFind {
 
 
         Dijkstra k = new Dijkstra();
+
         int leastDistance =  k.start(srcRegion, dstRegion);
 
         System.out.println("estimated arrival time is "+leastDistance+" hours.");
