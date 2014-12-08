@@ -23,11 +23,15 @@ public class DijkstraTest {
     private int DestinationPoint;
 
     public DijkstraTest(){
+        initMapInfo();
+    }
+
+    public void initMapInfo() {
         mapData = new int[][] { { 0, 3, 2, 6, m, 2 },
                 { 3, 0, 3, m, 8, m }, { 2, 3, 0, 2, 3, m },
                 { 6, m, 2, 0, 7, m }, { m, 8, 3, 7, 0, 1 },
                 { 2, m, m, m, 1, 0 }, };
-        
+
         theNumberOfPoint = mapData.length;
 
         distanceTemp = new int[theNumberOfPoint];
@@ -35,6 +39,7 @@ public class DijkstraTest {
         PointsOfBeforeDestination = new int[theNumberOfPoint];
         routePoint = new int[theNumberOfPoint];
     }
+
     public static DijkstraTest DijkstraInfoCreate(int mapData[][]){
         return new DijkstraTest();
    }

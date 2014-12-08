@@ -20,7 +20,6 @@ public class PathFind {
         dstRegion = checkPlaceNumber(dstRegion, dstNumber);
 
 
-
         Dijkstra k = new Dijkstra();
         k.start(srcRegion, dstRegion);
     }
