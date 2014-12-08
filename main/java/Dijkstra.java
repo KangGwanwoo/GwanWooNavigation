@@ -17,6 +17,10 @@ public class Dijkstra {
     private int DestinationPoint;
 
     public Dijkstra(){
+        initMapInfo();
+    }
+
+    public void initMapInfo() {
         this.mapData = new int[][] { { 0, 3, 2, 6, m, 2 },
                 { 3, 0, 3, m, 8, m }, { 2, 3, 0, 2, 3, m },
                 { 6, m, 2, 0, 7, m }, { m, 8, 3, 7, 0, 1 },
@@ -28,31 +32,32 @@ public class Dijkstra {
         PointsOfBeforeDestination = new int[theNumberOfPoint];
         routePoint = new int[theNumberOfPoint];
     }
+    public int start(int start, int end) {
+        startPoint = start;
+        DestinationPoint = end;
+        printUserInputInfo(start, end);
+
+        int k = 0;
+        int min = 0;
+        initPointInfo();
+
+        dijkstraAlgorithm(k);
+
+        return theLeastDistance();
+    }
+
     public static Dijkstra DijkstraInfoCreate(int mapData[][]){
         return new Dijkstra();
     }
 
-    public void println(Object line){
+    public void println(Object line) {
         System.out.println(line);
     }
 
-    public int start(int start, int end) {
-        println("===============================================");
-        println("Dijkstra Start");
-        println("StartPoint: " + start);
-        println("endPoint: " + end);
-        println("===============================================");
 
-        startPoint = start;
-        DestinationPoint = end;
-        int k = 0;
-        int min = 0;
-        for (int i = 0; i < theNumberOfPoint; i++) {
-            distanceTemp[i] = m;
-            PointsOfBeforeDestination[i] = 0;
-            visitedPoint[i] = false;
-        }
 
+    public void dijkstraAlgorithm(int k) {
+        int min;
         distanceTemp[startPoint - 1] = 0;
         for (int i = 0; i < theNumberOfPoint; i++) {
             min = m;
@@ -79,9 +84,24 @@ public class Dijkstra {
 
 
         }
-
-        return theLeastDistance();
     }
+
+    public void initPointInfo() {
+        for (int i = 0; i < theNumberOfPoint; i++) {
+            distanceTemp[i] = m;
+            PointsOfBeforeDestination[i] = 0;
+            visitedPoint[i] = false;
+        }
+    }
+
+    public void printUserInputInfo(int start, int end) {
+        println("===============================================");
+        println("Dijkstra Start");
+        println("StartPoint: " + start);
+        println("endPoint: " + end);
+        println("===============================================");
+    }
+
     public int theLeastDistance() {
         return distanceTemp[DestinationPoint - 1];
     }

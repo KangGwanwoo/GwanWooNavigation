@@ -40,6 +40,21 @@ public class DijkstraTest {
         routePoint = new int[theNumberOfPoint];
     }
 
+
+    public int start(int start, int end) {
+        startPoint = start;
+        DestinationPoint = end;
+        printUserInfo(start, end);
+
+        initPointInfo();
+
+        dijkstraAlgorithm();
+
+     return distanceTemp[DestinationPoint - 1];
+    }
+
+
+
     public static DijkstraTest DijkstraInfoCreate(int mapData[][]){
         return new DijkstraTest();
    }
@@ -48,23 +63,9 @@ public class DijkstraTest {
         System.out.println(line);
     }
 
-    public int start(int start, int end) {
-        println("===============================================");
-        println("Dijkstra Start");
-        println("StartPoint: " + start);
-        println("endPoint: " + end);
-        println("===============================================");
-
-        startPoint = start;
-        DestinationPoint = end;
+    public void dijkstraAlgorithm() {
         int k = 0;
         int min = 0;
-        for (int i = 0; i < theNumberOfPoint; i++) {
-            distanceTemp[i] = m;
-            PointsOfBeforeDestination[i] = 0;
-            visitedPoint[i] = false;
-        }
-
         distanceTemp[startPoint - 1] = 0;
         for (int i = 0; i < theNumberOfPoint; i++) {
             min = m;
@@ -91,7 +92,21 @@ public class DijkstraTest {
 
 
         }
+    }
 
-     return distanceTemp[DestinationPoint - 1];
+    public void initPointInfo() {
+        for (int i = 0; i < theNumberOfPoint; i++) {
+            distanceTemp[i] = m;
+            PointsOfBeforeDestination[i] = 0;
+            visitedPoint[i] = false;
+        }
+    }
+
+    public void printUserInfo(int start, int end) {
+        println("===============================================");
+        println("Dijkstra Start");
+        println("StartPoint: " + start);
+        println("endPoint: " + end);
+        println("===============================================");
     }
 }

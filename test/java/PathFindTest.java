@@ -18,11 +18,11 @@ public class PathFindTest {
 
         dstRegion = checkPlaceNumber(dstRegion, dstNumber);
 
-
-
         Dijkstra k = new Dijkstra();
 
-        return k.start(srcRegion, dstRegion);
+        int leastDistance =  k.start(srcRegion, dstRegion);
+        System.out.println("estimated arrival time is "+leastDistance+" hours.");
+        return leastDistance;
     }
 
     public void SentenceToSelectPlace(int isDestinationSelect) {

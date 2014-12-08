@@ -21,7 +21,9 @@ public class PathFind {
 
 
         Dijkstra k = new Dijkstra();
-        k.start(srcRegion, dstRegion);
+        int leastDistance =  k.start(srcRegion, dstRegion);
+
+        System.out.println("estimated arrival time is "+leastDistance+" hours.");
     }
 
 
