@@ -21,10 +21,10 @@ public class Dijkstra {
     }
 
     public void initMapInfo() {
-        this.mapData = new int[][] { { 0, 3, 2, 6, m, 2 },
-                { 3, 0, 3, m, 8, m }, { 2, 3, 0, 2, 3, m },
-                { 6, m, 2, 0, 7, m }, { m, 8, 3, 7, 0, 1 },
-                { 2, m, m, m, 1, 0 }, };
+        mapData = new int[][] { { 0, 180, 120, 360, m, 120 },
+                { 180, 0, 180, m, 480, m }, { 120, 180, 0, 120, 180, m },
+                { 360, m, 180, 0, 420, m }, { m, 480, 180, 420, 0, 60 },
+                { 120, m, m, m, 60, 0 }, };
         theNumberOfPoint = mapData.length;
 
         distanceTemp = new int[theNumberOfPoint];
@@ -55,8 +55,6 @@ public class Dijkstra {
     public void println(Object line) {
         System.out.println(line);
     }
-
-
 
     public void dijkstraAlgorithm() {
         int k = 0;

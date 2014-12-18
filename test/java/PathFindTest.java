@@ -22,7 +22,22 @@ public class PathFindTest {
     private VehicleTest selectVehicle(String vehicle) {
         VehicleTest vehicleClass = null;
         switch (Integer.parseInt(vehicle)){
-            case 1 : vehicleClass = new Airplane();
+            case 1 : vehicleClass = new VehicleTest() {
+                @Override
+                public int getSpeed() {
+                    return 0;
+                }
+
+                @Override
+                public double getTime() {
+                    return 0;
+                }
+
+                @Override
+                public void setDistance(int distance) {
+
+                }
+            };
                      break;
         }
 
