@@ -1,19 +1,17 @@
-/**
+package controlPackage; /**
  * Created by goodmorning on 2014-12-07.
  */
 
-import java.util.Scanner;
+import routingAlgorithm.Dijkstra;
+import vehiclePackage.Airplane;
+import vehiclePackage.Vehicle;
 
 
 public class PathFind {
     public double start(String srcRegion, String dstRegion, String vehicle) {
         double time;
-
-
         Dijkstra k = new Dijkstra();
-
         int leastDistance =  k.start(Integer.parseInt(srcRegion), Integer.parseInt(dstRegion));
-
         Vehicle vehicleClass = selectVehicle(vehicle);
         vehicleClass.setDistance(leastDistance);
         time = vehicleClass.getTime();

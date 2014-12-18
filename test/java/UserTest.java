@@ -19,7 +19,7 @@ public class UserTest {
 
         System.out.println("What kind of transportation do we use?  please choose your vehicle number.\" ");
         System.out.println("1: AirPlane  2:Bus  3:train  4:private car ");
-//        String Vehicle = scan.nextLine();
+
         String vehicle = "1";
 
         PathFindTest pf = new PathFindTest();

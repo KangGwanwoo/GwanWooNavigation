@@ -1,7 +1,9 @@
+package vehiclePackage;
+
 /**
  * Created by goodmorning on 2014-12-11.
  */
-public class Airplane implements Vehicle{
+public class Airplane implements Vehicle {
     private int distance;
     private double time;
     private int speed;
