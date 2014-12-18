@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class UserTest {
 
-    public int testMain() {
+    public double testMain() {
         Scanner scan = new Scanner(System.in);
         int srcRegion = 0, dstRegion = 0;
 
@@ -23,9 +23,9 @@ public class UserTest {
         String vehicle = "1";
 
         PathFindTest pf = new PathFindTest();
-        int leastDistance =  pf.start(chosenNumber , dstNumber ,vehicle);
-        System.out.println("estimated arrival time is "+leastDistance+" hours.");
-        return leastDistance;
+        double time =  pf.start(chosenNumber , dstNumber ,vehicle);
+        System.out.println("estimated arrival time is "+time+" hours.");
+        return time;
     }
 
     public void SentenceToSelectPlace(int isDestinationSelect) {

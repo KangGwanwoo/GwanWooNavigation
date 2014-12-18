@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 
 public class PathFindTest {
-    public int start(String srcRegion, String dstRegion, String vehicle) {
-        int time;
+    public double start(String srcRegion, String dstRegion, String vehicle) {
+        double time;
+
 
         DijkstraTest k = new DijkstraTest();
 
@@ -15,7 +16,7 @@ public class PathFindTest {
         VehicleTest vehicleClass = selectVehicle(vehicle);
         vehicleClass.setDistance(leastDistance);
         time = vehicleClass.getTime();
-        return leastDistance;
+        return time;
     }
 
     private VehicleTest selectVehicle(String vehicle) {

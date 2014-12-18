@@ -4,6 +4,6 @@
 public interface VehicleTest {
     public int Speed = 0;
     public int getSpeed();
-    public int getTime();
+    public double getTime();
     public void setDistance(int distance);
 }

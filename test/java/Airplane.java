@@ -3,7 +3,7 @@
  */
 public class Airplane implements VehicleTest{
     private int distance;
-    private int time;
+    private double time;
     private int speed;
 
 
@@ -16,8 +16,9 @@ public class Airplane implements VehicleTest{
     }
 
     @Override
-    public int getTime() {
-        time = distance/speed;
+    public double getTime() {
+
+        time = (double)distance/speed;
         return time;
     }
 
