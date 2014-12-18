@@ -8,8 +8,8 @@ public class TestHello {
 
     @Test
     public void testPasses() {
-       PathFindTest p = new PathFindTest();
+       UserTest ut = new UserTest();
 
-        assertEquals(2, p.TestMain()); //1 = seoul 6=jeju airplane time is 2 hour
+        assertEquals(2, ut.testMain()); //1 = seoul 6=jeju airplane time is 2 hour
     }
 }
