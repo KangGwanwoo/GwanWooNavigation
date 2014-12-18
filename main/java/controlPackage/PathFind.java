@@ -3,8 +3,7 @@ package controlPackage; /**
  */
 
 import routingAlgorithm.Dijkstra;
-import vehiclePackage.Airplane;
-import vehiclePackage.Vehicle;
+import vehiclePackage.*;
 
 
 public class PathFind {
@@ -22,6 +21,12 @@ public class PathFind {
         Vehicle vehicleClass = null;
         switch (Integer.parseInt(vehicle)){
             case 1 : vehicleClass = new Airplane();
+                break;
+            case 2 : vehicleClass = new Train();
+                break;
+            case 3 : vehicleClass = new Bus();
+                break;
+            case 4 : vehicleClass = new PrivateCar();
                 break;
         }
 
