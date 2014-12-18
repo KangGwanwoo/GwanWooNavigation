@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * Created by goodmorning on 2014-12-07.
  */
-public class Dijkstra {
+public class Dijkstra implements RoutingAlgorithm{
 
     final static int m = 30000;
     private boolean[] visitedPoint;
@@ -18,15 +18,13 @@ public class Dijkstra {
     private int startPoint;
     private int DestinationPoint;
 
-    public Dijkstra(){
-        initMapInfo();
+    public Dijkstra(int[][] map){
+        initMapInfo(map);
     }
 
-    public void initMapInfo() {
-        mapData = new int[][] { { 0, 180, 120, 360, m, 120 },
-                { 180, 0, 180, m, 480, m }, { 120, 180, 0, 120, 180, m },
-                { 360, m, 180, 0, 420, m }, { m, 480, 180, 420, 0, 60 },
-                { 120, m, m, m, 60, 0 }, };
+    public void initMapInfo(int[][] map) {
+
+        mapData =map;
         theNumberOfPoint = mapData.length;
 
         distanceTemp = new int[theNumberOfPoint];
@@ -34,25 +32,8 @@ public class Dijkstra {
         PointsOfBeforeDestination = new int[theNumberOfPoint];
         routePoint = new int[theNumberOfPoint];
     }
-    public int start(int start, int end) {
-
-        startPoint = start;
-
-        DestinationPoint = end;
-
-        printUserInputInfo(start, end);
 
 
-        initPointInfo();
-
-        dijkstraAlgorithm();
-
-        return theLeastDistance();
-    }
-
-    public static Dijkstra DijkstraInfoCreate(int mapData[][]){
-        return new Dijkstra();
-    }
 
     public void println(Object line) {
         System.out.println(line);
@@ -143,4 +124,22 @@ public class Dijkstra {
         return routerVector;
     }
 
+
+
+    @Override
+    public int getShortestPath(int start, int end) {
+
+        startPoint = start;
+
+        DestinationPoint = end;
+
+        printUserInputInfo(start, end);
+
+
+        initPointInfo();
+
+        dijkstraAlgorithm();
+
+        return theLeastDistance();
+    }
 }

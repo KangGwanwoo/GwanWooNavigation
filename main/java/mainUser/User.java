@@ -21,7 +21,7 @@ public class User {
         String vehicle = sentenceToSelectVehicle(scan);
 
         PathFind pf = new PathFind();
-        double time =  pf.start(chosenNumber , dstNumber ,vehicle);
+        double time =  pf.getEstimatedTime(chosenNumber, dstNumber, vehicle);
 
         System.out.println("estimated arrival time is "+time+" hours.");
 
