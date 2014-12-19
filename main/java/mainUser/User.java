@@ -12,7 +12,7 @@ public class User {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        String chosenNumber =sentenceToSelectPlace(0, scan);
+        String srcNumber = sentenceToSelectPlace(0, scan);
 
 
         String dstNumber = sentenceToSelectPlace(1, scan);
@@ -21,7 +21,7 @@ public class User {
         String vehicle = sentenceToSelectVehicle(scan);
 
         PathFind pf = new PathFind();
-        double time =  pf.getEstimatedTime(chosenNumber, dstNumber, vehicle);
+        double time =  pf.getEstimatedTime(srcNumber, dstNumber, vehicle);
 
         System.out.println("estimated arrival time is "+time+" hours.");
 

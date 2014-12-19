@@ -24,7 +24,7 @@ public class Dijkstra implements RoutingAlgorithm{
 
     public void initMapInfo(int[][] map) {
 
-        mapData =map;
+        mapData = map;
         theNumberOfPoint = mapData.length;
 
         distanceTemp = new int[theNumberOfPoint];
@@ -91,39 +91,7 @@ public class Dijkstra implements RoutingAlgorithm{
     public int theLeastDistance() {
         return distanceTemp[DestinationPoint - 1];
     }
-
-    /**** 최단 거리 출력 ****/
-    public void nowLeastDistance() {
-        System.out.printf("최단거리:  %10d  시간   ", distanceTemp[DestinationPoint- 1]);
-    }
-
-    /**** 최단 경로를 저장 ****/
-    public void inverseFind() {
-        int tmp = 0;
-        int top = -1;
-        tmp = DestinationPoint - 1;
-        while (true) {
-            routePoint[++top] = tmp + 1;
-            if (tmp == startPoint - 1)
-                break; /* 시작점에 이르렀으면 종료 */
-            tmp = distanceTemp[tmp];
-        }
-
-		/* 역추적 결과 출력 */
-        routerVector.removeAllElements();
-        for (int i = top; i > -1; i--) {
-            System.out.printf("%d", routePoint[i]);
-            routerVector.add(routePoint[i]);
-            if (i != 0)System.out.printf(" -> ");
-        }
-        System.out.printf("\n");
-    }
-
-    public Vector<Integer> getStack()
-    {
-        return routerVector;
-    }
-
+    
 
 
     @Override
