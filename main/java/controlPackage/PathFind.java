@@ -13,7 +13,7 @@ public class PathFind {
         double time;
 
         StationMap map = new StationMap();
-        
+
         RoutingAlgorithm algorithm = new Dijkstra(map.getMap());
 
         int shortestDistance =  algorithm.getShortestPath(Integer.parseInt(srcRegion), Integer.parseInt(dstRegion));
