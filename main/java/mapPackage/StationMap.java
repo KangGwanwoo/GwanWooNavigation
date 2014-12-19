@@ -11,7 +11,9 @@ public class StationMap {
             { 360, m, 180, 0, 420, m }, { m, 480, 180, 420, 0, 60 },
             { 120, m, m, m, 60, 0 }, };
 
-
+    public void setMap(int[][] map){
+        this.map = map;
+    }
     public static int[][] getMap(){
 
         return map;

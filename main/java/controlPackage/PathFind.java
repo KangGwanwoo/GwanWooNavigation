@@ -11,7 +11,9 @@ import vehiclePackage.*;
 public class PathFind {
     public double getEstimatedTime(String srcRegion, String dstRegion, String vehicle) {
         double time;
+
         StationMap map = new StationMap();
+        
         RoutingAlgorithm algorithm = new Dijkstra(map.getMap());
 
         int shortestDistance =  algorithm.getShortestPath(Integer.parseInt(srcRegion), Integer.parseInt(dstRegion));
