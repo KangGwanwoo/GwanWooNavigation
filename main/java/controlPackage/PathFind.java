@@ -12,13 +12,13 @@ public class PathFind {
     public double getEstimatedTime(String srcRegion, String dstRegion, String vehicle) {
         double time;
         StationMap map = new StationMap();
-        RoutingAlgorithm k = new Dijkstra(map.getMap());
+        RoutingAlgorithm algorithm = new Dijkstra(map.getMap());
 
-        int leastDistance =  k.getShortestPath(Integer.parseInt(srcRegion), Integer.parseInt(dstRegion));
+        int shortestDistance =  algorithm.getShortestPath(Integer.parseInt(srcRegion), Integer.parseInt(dstRegion));
 
         Vehicle vehicleClass = selectVehicle(vehicle);
 
-        vehicleClass.setDistance(leastDistance);
+        vehicleClass.setDistance(shortestDistance);
 
         time = vehicleClass.getTime();
 
